@@ -4,10 +4,17 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
-class IndexController extends AbstractController {
-
-    public function home() {
-        return new Response()
+class IndexController extends AbstractController
+{
+    /**
+     * @Route("/")
+     */
+    public function home()
+    {
+        return new Response(
+            content: '<h1> My First Symfony Page</h1>'
+        );
     }
 }
